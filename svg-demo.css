@@ -1,0 +1,244 @@
+/* SVG Animation Demo CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #8B4513;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+.demo-container > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.svg-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    min-height: 400px;
+}
+
+.animated-svg {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 10px 30px rgba(139, 69, 19, 0.2));
+}
+
+/* SVGアニメーションのカスタマイズ用CSS変数 */
+:root {
+    --animation-speed: 1;
+    --svg-scale: 1;
+    --svg-opacity: 1;
+    --coffee-color: #8B4513;
+    --steam-color: #d4a574;
+    --frame-color: #1F2937;
+}
+
+/* SVGアニメーションの動的制御 */
+.animated-svg {
+    transform: scale(var(--svg-scale));
+    opacity: var(--svg-opacity);
+    animation-play-state: running;
+}
+
+.animated-svg.paused {
+    animation-play-state: paused;
+}
+
+/* コントロールパネル */
+.controls {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.controls h2 {
+    color: #8B4513;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.control-group label {
+    min-width: 150px;
+    font-weight: 500;
+    color: #555;
+}
+
+.control-group input[type="range"] {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: #ddd;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #8B4513;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb:hover {
+    background: #d4a574;
+}
+
+.control-group span {
+    min-width: 60px;
+    font-weight: 600;
+    color: #8B4513;
+}
+
+button {
+    background: #8B4513;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #d4a574;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 情報セクション */
+.info {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2rem;
+    border-left: 4px solid #8B4513;
+}
+
+.info h3 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.info p {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.info li::before {
+    content: '☕';
+    position: absolute;
+    left: 0;
+    color: #8B4513;
+}
+
+.info code {
+    background: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #8B4513;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .demo-container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .svg-wrapper {
+        padding: 2rem 1rem;
+    }
+    
+    .controls {
+        padding: 1.5rem;
+    }
+    
+    .control-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .control-group label {
+        min-width: auto;
+    }
+    
+    .control-group input[type="range"] {
+        width: 100%;
+    }
+    
+    button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
