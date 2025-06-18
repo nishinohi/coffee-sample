@@ -68,22 +68,13 @@ h1 {
    ★ここがアニメーションの主要制御部分 ★
    ================================= */
 
-/* SVG要素のベーススタイル */
-.animated-svg {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  transition: all 0.3s ease; /* サイズ変更時のスムーズな遷移 */
-  filter: drop-shadow(0 10px 30px rgba(255, 0, 0, 0.2)); /* SVG全体の影 */
-}
-
 /* アニメーション制御用CSS変数 
    ★これらの変数を変更してアニメーションをカスタマイズ★ */
 :root {
   --animation-speed: 1; /* アニメーション速度倍率 (JavaScriptで動的変更) */
   --svg-scale: 1; /* SVGのスケール倍率 (JavaScriptで動的変更) */
   --svg-opacity: 1; /* SVGの透明度 (JavaScriptで動的変更) */
-  --coffee-color: #ff0000; /* コーヒーの色 (将来の拡張用) */
+  --coffee-color: #1f2937; /* コーヒーの色 (将来の拡張用) */
   --steam-color: #1f2937; /* 蒸気の色 (将来の拡張用) */
   --frame-color: #1f2937; /* フレームの色 (将来の拡張用) */
 }

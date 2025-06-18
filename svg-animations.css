@@ -11,84 +11,38 @@ SVG内部のアニメーションを外部CSSファイルで管理
 
 /* ドリッパーフレーム */
 .dripper-frame {
-    stroke: currentColor;
-    stroke-width: 4;
-    fill: none;
-    opacity: 0.8;
+  stroke: currentColor;
+  stroke-width: 4;
+  fill: none;
 }
 
 /* コーヒードロップ */
 .coffee-drop-1 {
-    fill: #8B4513;
-    animation: drop1Animation 3s ease-in-out infinite;
-    opacity: 0;
-    transform-origin: 242.5px 70.5px;
+  fill: #1f2937;
+  animation: drop1Animation 5s cubic-bezier(0.49, 0.5, 0.31, 1.03) 2;
+  opacity: 0;
+  transform-origin: 242.5px 70.5px;
 }
 
 .coffee-drop-2 {
-    fill: #8B4513;
-    animation: drop2Animation 3s ease-in-out infinite 1s;
-    opacity: 0;
-    transform-origin: 242.5px 133.5px;
+  fill: #1f2937;
+  animation: drop2Animation 5s 2.5s cubic-bezier(0.49, 0.5, 0.31, 1.03) 2;
+  opacity: 0;
+  transform-origin: 242.5px 70.5px;
 }
 
-.coffee-drop-3 {
-    fill: #8B4513;
-    animation: drop3Animation 3s ease-in-out infinite 2s;
-    opacity: 0;
-    transform-origin: 242.5px 100px;
+.coffee-drop-finish {
+  fill: #1f2937;
+  animation: dropFinishi 1.5s 12.5s both ease-in-out 1;
+  opacity: 0;
+  transform-origin: 242.5px 70.5px;
 }
 
 /* コーヒープール */
 .coffee-pool {
-    fill: #8B4513;
-    animation: poolFilling 6s ease-in-out infinite;
-    opacity: 0.7;
-}
-
-/* 蒸気エフェクト */
-.steam-1 {
-    stroke: #d4a574;
-    stroke-width: 2;
-    fill: none;
-    opacity: 0;
-    animation: steamAnimation 4s ease-in-out infinite;
-    transform-origin: 225px 50px;
-}
-
-.steam-2 {
-    stroke: #d4a574;
-    stroke-width: 2;
-    fill: none;
-    opacity: 0;
-    animation: steamAnimation 4s ease-in-out infinite 1.5s;
-    transform-origin: 243px 50px;
-}
-
-.steam-3 {
-    stroke: #d4a574;
-    stroke-width: 2;
-    fill: none;
-    opacity: 0;
-    animation: steamAnimation 4s ease-in-out infinite 3s;
-    transform-origin: 261px 50px;
-}
-
-/* フレームグロー効果 */
-.frame-glow {
-    stroke: #d4a574;
-    stroke-width: 4;
-    fill: none;
-    opacity: 0;
-    animation: frameGlow 8s ease-in-out infinite;
-}
-
-/* ドリッパー構造 */
-.dripper-structure {
-    stroke: currentColor;
-    stroke-width: 3;
-    fill: none;
-    animation: dripperPulse 4s ease-in-out infinite;
+  fill: #1f2937;
+  animation: poolFilling 10s 2.6s both ease-in-out 1;
+  opacity: 0.7;
 }
 
 /* =================================
@@ -97,190 +51,67 @@ SVG内部のアニメーションを外部CSSファイルで管理
 
 /* コーヒードロップ1のアニメーション */
 @keyframes drop1Animation {
-    0% { 
-        opacity: 0;
-        transform: scale(0.3) translateY(-10px);
-    }
-    15% { 
-        opacity: 1;
-        transform: scale(1) translateY(0px);
-    }
-    35% { 
-        opacity: 1;
-        transform: scale(0.9) translateY(40px);
-    }
-    50% { 
-        opacity: 0.8;
-        transform: scale(0.7) translateY(70px);
-    }
-    70% { 
-        opacity: 0.3;
-        transform: scale(0.4) translateY(90px);
-    }
-    100% { 
-        opacity: 0;
-        transform: scale(0.1) translateY(100px);
-    }
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-100px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translateY(100px);
+  }
 }
 
 /* コーヒードロップ2のアニメーション */
 @keyframes drop2Animation {
-    0% { 
-        opacity: 0;
-        transform: scale(0.2) translateY(-5px);
-    }
-    20% { 
-        opacity: 1;
-        transform: scale(0.6) translateY(0px);
-    }
-    40% { 
-        opacity: 1;
-        transform: scale(0.5) translateY(20px);
-    }
-    60% { 
-        opacity: 0.7;
-        transform: scale(0.4) translateY(35px);
-    }
-    80% { 
-        opacity: 0.3;
-        transform: scale(0.2) translateY(45px);
-    }
-    100% { 
-        opacity: 0;
-        transform: scale(0.1) translateY(50px);
-    }
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-100px);
+  }
+  50% {
+    opacity: 1;
+    /* transform: scale(0.7) translateY(0px); */
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translateY(100px);
+  }
 }
 
-/* コーヒードロップ3のアニメーション */
-@keyframes drop3Animation {
-    0% { 
-        opacity: 0;
-        transform: scale(0.1) translateY(-3px);
-    }
-    25% { 
-        opacity: 0.8;
-        transform: scale(0.4) translateY(0px);
-    }
-    50% { 
-        opacity: 0.9;
-        transform: scale(0.35) translateY(25px);
-    }
-    75% { 
-        opacity: 0.5;
-        transform: scale(0.2) translateY(40px);
-    }
-    100% { 
-        opacity: 0;
-        transform: scale(0.1) translateY(50px);
-    }
+/* コーヒードロップ1のアニメーション */
+@keyframes dropFinishi {
+  0% {
+    transform: scale(0.9) translateY(-5px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
 }
 
 /* コーヒープールのアニメーション */
 @keyframes poolFilling {
-    0% { 
-        d: path("M243 303L243 303L243 303L243 303Z");
-        opacity: 0;
-    }
-    15% { 
-        d: path("M243 303L230 290L256 290L243 303Z");
-        opacity: 0.4;
-    }
-    30% { 
-        d: path("M243 303L215 275L271 275L243 303Z");
-        opacity: 0.6;
-    }
-    50% { 
-        d: path("M243 303L195 250L291 250L243 303Z");
-        opacity: 0.8;
-    }
-    70% { 
-        d: path("M243 303L175 225L311 225L243 303Z");
-        opacity: 0.9;
-    }
-    85% { 
-        d: path("M243 303L155 200L331 200L243 303Z");
-        opacity: 1;
-    }
-    100% { 
-        d: path("M243 303L165 210L321 210L243 303Z");
-        opacity: 0.8;
-    }
-}
-
-/* 蒸気のアニメーション */
-@keyframes steamAnimation {
-    0% { 
-        opacity: 0;
-        transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
-    }
-    25% { 
-        opacity: 0.6;
-        transform: translateY(-15px) translateX(3px) rotate(3deg) scale(1.1);
-    }
-    50% { 
-        opacity: 0.8;
-        transform: translateY(-30px) translateX(-2px) rotate(-2deg) scale(1.2);
-    }
-    75% { 
-        opacity: 0.4;
-        transform: translateY(-45px) translateX(4px) rotate(4deg) scale(1.3);
-    }
-    100% { 
-        opacity: 0;
-        transform: translateY(-60px) translateX(-1px) rotate(-1deg) scale(1.4);
-    }
-}
-
-/* フレームグローのアニメーション */
-@keyframes frameGlow {
-    0%, 100% { 
-        opacity: 0;
-    }
-    50% { 
-        opacity: 0.2;
-    }
-}
-
-/* ドリッパーパルスのアニメーション */
-@keyframes dripperPulse {
-    0%, 100% { 
-        transform: scale(1);
-    }
-    50% { 
-        transform: scale(1.02);
-    }
-}
-
-/* =================================
-   カスタマイズ用セクション
-   ★ここでアニメーションを自由に変更★
-   ================================= */
-
-/* 例: より速いコーヒードロップ */
-.coffee-drop-fast {
-    animation-duration: 1.5s !important;
-}
-
-/* 例: 大きな蒸気エフェクト */
-.steam-large {
-    stroke-width: 4 !important;
-    opacity: 0.8 !important;
-}
-
-/* 例: カラフルなコーヒー */
-.coffee-colorful .coffee-drop-1 {
-    fill: #ff6b35;
-}
-
-.coffee-colorful .coffee-drop-2 {
-    fill: #f7931e;
-}
-
-.coffee-colorful .coffee-drop-3 {
-    fill: #ffd100;
-}
-
-/* 例: ゆっくりとしたプール充填 */
-.pool-slow {
-    animation-duration: 12s !important;
+  0% {
+    d: path('M243 303L243 303L243 303L243 303Z');
+    opacity: 1;
+  }
+  25% {
+    d: path('M243 303L189 234L296 234L243 303Z');
+    opacity: 1;
+  }
+  50% {
+    d: path('M243 303L162 200L323 200L243 303Z');
+    opacity: 1;
+  }
+  75% {
+    d: path('M243 303L149 183L336 183L243 303Z');
+    opacity: 1;
+  }
+  100% {
+    d: path('M243 303L136 166L350 166L243 303Z');
+    opacity: 1;
+  }
 }

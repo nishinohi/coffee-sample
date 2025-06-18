@@ -1,122 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MAHOT COFFEE - 外部CSS制御デモ</title>
-    <link rel="stylesheet" href="svg-demo.css">
+    <link rel="stylesheet" href="svg-demo.css" />
     <!-- SVGアニメーション用外部CSS -->
-    <link rel="stylesheet" href="svg-animations.css">
-</head>
-<body>
+    <link rel="stylesheet" href="svg-animations.css" />
+  </head>
+  <body>
     <div class="demo-container">
-        <h1>MAHOT COFFEE - 外部CSS制御デモ</h1>
-        <p>SVGアニメーションを外部CSSファイルで制御</p>
-        
-        <div class="svg-wrapper">
-            <!-- インラインSVG（外部CSSで制御） -->
-            <svg class="animated-svg" width="486" height="306" viewBox="0 0 486 306" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Frame structure -->
-              <path class="dripper-frame" d="M484 45V303.5"/>
-              <path class="dripper-frame" d="M2 45V303.5"/>
-              <path class="dripper-frame" d="M7 2L243 302.5L479 2"/>
-              <path class="dripper-frame" d="M66 166.5H420.5"/>
-              <path class="dripper-frame" d="M110 23L375 23"/>
-              
-              <!-- Frame glow effect -->
-              <path class="frame-glow" d="M110 23L375 23"/>
-              <path class="frame-glow" d="M66 166.5H420.5"/>
-              
-              <!-- Steam effects -->
-              <path class="steam-1" d="M220 40 Q222 30 225 20 Q228 15 230 10 Q232 5 235 0"/>
-              <path class="steam-2" d="M243 40 Q245 30 248 20 Q251 15 253 10 Q255 5 258 0"/>
-              <path class="steam-3" d="M266 40 Q268 30 271 20 Q274 15 276 10 Q278 5 281 0"/>
-              
-              <!-- Coffee drops with different sizes and timing -->
-              <circle class="coffee-drop-1" cx="242.5" cy="70.5" r="20.5"/>
-              <circle class="coffee-drop-2" cx="242.5" cy="133.5" r="9.5"/>
-              <circle class="coffee-drop-3" cx="242.5" cy="100" r="6"/>
-              
-              <!-- Coffee pool -->
-              <path class="coffee-pool" d="M243 303L243 303L243 303L243 303Z"/>
-              
-              <!-- Dripper structure outline -->
-              <path class="dripper-structure" d="M243 303L136 166L350 166L243 303Z"/>
-            </svg>
-        </div>
-        
-        <div class="controls">
-            <h2>外部CSSでのカスタマイズ例</h2>
-            
-            <div class="control-group">
-                <button onclick="applyFastAnimation()">高速アニメーション</button>
-                <button onclick="applyColorfulTheme()">カラフルテーマ</button>
-                <button onclick="applySlowPool()">ゆっくりプール</button>
-                <button onclick="resetStyles()">リセット</button>
-            </div>
-        </div>
-        
-        <div class="info">
-            <h3>外部CSSでのアニメーション制御</h3>
-            <p><strong>利点:</strong></p>
-            <ul>
-                <li><strong>保守性:</strong> アニメーションロジックを別ファイルで管理</li>
-                <li><strong>再利用性:</strong> 複数のSVGで同じアニメーションを共有</li>
-                <li><strong>テーマ切り替え:</strong> CSSクラスでスタイルを動的変更</li>
-                <li><strong>キャッシュ効率:</strong> CSSファイルがブラウザキャッシュされる</li>
-            </ul>
-            
-            <p><strong>実装方法:</strong></p>
-            <ul>
-                <li><code>svg-animations.css</code>: SVGアニメーション専用CSS</li>
-                <li><code>img/mahot-clean.svg</code>: スタイルを含まないクリーンなSVG</li>
-                <li>JavaScriptでCSSクラスを動的に追加・削除</li>
-            </ul>
-            
-            <p><strong>注意点:</strong></p>
-            <ul>
-                <li>SVGが外部ファイルの場合、一部ブラウザで制限あり</li>
-                <li>インラインSVGの方が確実に動作</li>
-                <li>セキュリティポリシーによって制限される場合あり</li>
-            </ul>
-        </div>
-    </div>
-    
-    <script>
-        // 外部CSSクラスを使ったスタイル切り替え
-        function applyFastAnimation() {
-            const svg = document.querySelector('.animated-svg');
-            svg.classList.add('coffee-drop-fast');
-            console.log('🚀 高速アニメーション適用');
-        }
-        
-        function applyColorfulTheme() {
-            const svg = document.querySelector('.animated-svg');
-            svg.classList.add('coffee-colorful');
-            console.log('🌈 カラフルテーマ適用');
-        }
-        
-        function applySlowPool() {
-            const svg = document.querySelector('.animated-svg');
-            svg.classList.add('pool-slow');
-            console.log('🐌 ゆっくりプール適用');
-        }
-        
-        function resetStyles() {
-            const svg = document.querySelector('.animated-svg');
-            svg.className = 'animated-svg'; // 全クラスをリセット
-            console.log('🔄 スタイルリセット');
-        }
-        
-        // ページ読み込み後の処理
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('✅ ページが読み込まれました');
-            console.log('🎨 外部CSSアニメーションが適用されています');
-            
-            // アニメーションが動作しているかチェック
-            const drops = document.querySelectorAll('.coffee-drop-1, .coffee-drop-2, .coffee-drop-3');
-            console.log(`☕ コーヒードロップ要素: ${drops.length}個見つかりました`);
-        });
-    </script>
-</body>
+      <div class="svg-wrapper">
+        <object type="image/svg+xml" data="img/mahot-clean.svg" class="animated-svg">SVGを読み込み中...</object>
+      </div>
+  </body>
 </html>
