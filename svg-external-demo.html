@@ -14,10 +14,35 @@
         <p>SVGアニメーションを外部CSSファイルで制御</p>
         
         <div class="svg-wrapper">
-            <!-- クリーンなSVG（スタイルなし） -->
-            <object type="image/svg+xml" data="img/mahot-clean.svg" class="animated-svg">
-                SVGを読み込み中...
-            </object>
+            <!-- インラインSVG（外部CSSで制御） -->
+            <svg class="animated-svg" width="486" height="306" viewBox="0 0 486 306" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Frame structure -->
+              <path class="dripper-frame" d="M484 45V303.5"/>
+              <path class="dripper-frame" d="M2 45V303.5"/>
+              <path class="dripper-frame" d="M7 2L243 302.5L479 2"/>
+              <path class="dripper-frame" d="M66 166.5H420.5"/>
+              <path class="dripper-frame" d="M110 23L375 23"/>
+              
+              <!-- Frame glow effect -->
+              <path class="frame-glow" d="M110 23L375 23"/>
+              <path class="frame-glow" d="M66 166.5H420.5"/>
+              
+              <!-- Steam effects -->
+              <path class="steam-1" d="M220 40 Q222 30 225 20 Q228 15 230 10 Q232 5 235 0"/>
+              <path class="steam-2" d="M243 40 Q245 30 248 20 Q251 15 253 10 Q255 5 258 0"/>
+              <path class="steam-3" d="M266 40 Q268 30 271 20 Q274 15 276 10 Q278 5 281 0"/>
+              
+              <!-- Coffee drops with different sizes and timing -->
+              <circle class="coffee-drop-1" cx="242.5" cy="70.5" r="20.5"/>
+              <circle class="coffee-drop-2" cx="242.5" cy="133.5" r="9.5"/>
+              <circle class="coffee-drop-3" cx="242.5" cy="100" r="6"/>
+              
+              <!-- Coffee pool -->
+              <path class="coffee-pool" d="M243 303L243 303L243 303L243 303Z"/>
+              
+              <!-- Dripper structure outline -->
+              <path class="dripper-structure" d="M243 303L136 166L350 166L243 303Z"/>
+            </svg>
         </div>
         
         <div class="controls">
@@ -62,27 +87,35 @@
         function applyFastAnimation() {
             const svg = document.querySelector('.animated-svg');
             svg.classList.add('coffee-drop-fast');
+            console.log('🚀 高速アニメーション適用');
         }
         
         function applyColorfulTheme() {
             const svg = document.querySelector('.animated-svg');
             svg.classList.add('coffee-colorful');
+            console.log('🌈 カラフルテーマ適用');
         }
         
         function applySlowPool() {
             const svg = document.querySelector('.animated-svg');
             svg.classList.add('pool-slow');
+            console.log('🐌 ゆっくりプール適用');
         }
         
         function resetStyles() {
             const svg = document.querySelector('.animated-svg');
             svg.className = 'animated-svg'; // 全クラスをリセット
+            console.log('🔄 スタイルリセット');
         }
         
-        // SVG読み込み後の処理
-        document.querySelector('.animated-svg').addEventListener('load', function() {
-            console.log('✅ SVGが読み込まれました');
+        // ページ読み込み後の処理
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('✅ ページが読み込まれました');
             console.log('🎨 外部CSSアニメーションが適用されています');
+            
+            // アニメーションが動作しているかチェック
+            const drops = document.querySelectorAll('.coffee-drop-1, .coffee-drop-2, .coffee-drop-3');
+            console.log(`☕ コーヒードロップ要素: ${drops.length}個見つかりました`);
         });
     </script>
 </body>
