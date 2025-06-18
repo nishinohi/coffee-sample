@@ -243,10 +243,6 @@
   <path class="frame-glow" d="M110 23L375 23"/>
   <path class="frame-glow" d="M66 166.5H420.5"/>
   
-  <!-- Steam effects -->
-  <path class="steam-1" d="M220 40 Q222 30 225 20 Q228 15 230 10 Q232 5 235 0"/>
-  <path class="steam-2" d="M243 40 Q245 30 248 20 Q251 15 253 10 Q255 5 258 0"/>
-  <path class="steam-3" d="M266 40 Q268 30 271 20 Q274 15 276 10 Q278 5 281 0"/>
   
   <!-- Coffee drops with different sizes and timing -->
   <circle class="coffee-drop-1" cx="242.5" cy="70.5" r="20.5"/>

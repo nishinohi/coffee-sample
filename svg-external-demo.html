@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAHOT COFFEE - 外部CSS制御デモ</title>
+    <link rel="stylesheet" href="svg-demo.css">
+    <!-- SVGアニメーション用外部CSS -->
+    <link rel="stylesheet" href="svg-animations.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>MAHOT COFFEE - 外部CSS制御デモ</h1>
+        <p>SVGアニメーションを外部CSSファイルで制御</p>
+        
+        <div class="svg-wrapper">
+            <!-- クリーンなSVG（スタイルなし） -->
+            <object type="image/svg+xml" data="img/mahot-clean.svg" class="animated-svg">
+                SVGを読み込み中...
+            </object>
+        </div>
+        
+        <div class="controls">
+            <h2>外部CSSでのカスタマイズ例</h2>
+            
+            <div class="control-group">
+                <button onclick="applyFastAnimation()">高速アニメーション</button>
+                <button onclick="applyColorfulTheme()">カラフルテーマ</button>
+                <button onclick="applySlowPool()">ゆっくりプール</button>
+                <button onclick="resetStyles()">リセット</button>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>外部CSSでのアニメーション制御</h3>
+            <p><strong>利点:</strong></p>
+            <ul>
+                <li><strong>保守性:</strong> アニメーションロジックを別ファイルで管理</li>
+                <li><strong>再利用性:</strong> 複数のSVGで同じアニメーションを共有</li>
+                <li><strong>テーマ切り替え:</strong> CSSクラスでスタイルを動的変更</li>
+                <li><strong>キャッシュ効率:</strong> CSSファイルがブラウザキャッシュされる</li>
+            </ul>
+            
+            <p><strong>実装方法:</strong></p>
+            <ul>
+                <li><code>svg-animations.css</code>: SVGアニメーション専用CSS</li>
+                <li><code>img/mahot-clean.svg</code>: スタイルを含まないクリーンなSVG</li>
+                <li>JavaScriptでCSSクラスを動的に追加・削除</li>
+            </ul>
+            
+            <p><strong>注意点:</strong></p>
+            <ul>
+                <li>SVGが外部ファイルの場合、一部ブラウザで制限あり</li>
+                <li>インラインSVGの方が確実に動作</li>
+                <li>セキュリティポリシーによって制限される場合あり</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // 外部CSSクラスを使ったスタイル切り替え
+        function applyFastAnimation() {
+            const svg = document.querySelector('.animated-svg');
+            svg.classList.add('coffee-drop-fast');
+        }
+        
+        function applyColorfulTheme() {
+            const svg = document.querySelector('.animated-svg');
+            svg.classList.add('coffee-colorful');
+        }
+        
+        function applySlowPool() {
+            const svg = document.querySelector('.animated-svg');
+            svg.classList.add('pool-slow');
+        }
+        
+        function resetStyles() {
+            const svg = document.querySelector('.animated-svg');
+            svg.className = 'animated-svg'; // 全クラスをリセット
+        }
+        
+        // SVG読み込み後の処理
+        document.querySelector('.animated-svg').addEventListener('load', function() {
+            console.log('✅ SVGが読み込まれました');
+            console.log('🎨 外部CSSアニメーションが適用されています');
+        });
+    </script>
+</body>
+</html>
