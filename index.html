@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRAFT COFFEE - こだわりのコーヒースタンド</title>
+    <title>MAHOT COFFEE - 特別な一杯を、あなたに</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- ナビゲーション -->
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="img/logo.jpg" alt="CRAFT COFFEE">
+                <h1 class="logo-text">MAHOT COFFEE</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about" data-text="About">About</a></li>
+                <li><a href="#menu" data-text="Menu">Menu</a></li>
+                <li><a href="#process" data-text="Process">Process</a></li>
+                <li><a href="#shop" data-text="Shop">Shop</a></li>
             </ul>
         </div>
     </nav>
@@ -29,25 +29,52 @@
     <section class="hero">
         <div class="hero-image">
             <img src="img/hero.jpg" alt="コーヒーカップ">
+            <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-            <h1 class="hero-title">一杯の物語を、<br>あなたに。</h1>
-            <p class="hero-subtitle">厳選された豆から生まれる、特別な一杯</p>
-            <a href="#menu" class="cta-button">メニューを見る</a>
+            <div class="hero-text-wrapper">
+                <span class="hero-label">MAHOT COFFEE</span>
+                <h2 class="hero-title">一杯の物語を、<br><span>あなたに。</span></h2>
+                <p class="hero-subtitle">厳選された豆から生まれる、特別な一杯</p>
+                <a href="#menu" class="cta-button">
+                    <span>メニューを見る</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- About セクション -->
     <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">私たちのこだわり</h2>
+            <h2 class="section-title" data-subtitle="Our Philosophy">私たちのこだわり</h2>
             <div class="about-grid">
                 <div class="about-text">
+                    <div class="about-intro">
+                        <span class="about-number">01</span>
+                        <h3>最高品質への追求</h3>
+                    </div>
                     <p>世界各地から厳選した最高品質のコーヒー豆を、<br>
                     一杯一杯丁寧にドリップしています。</p>
                     <p>豆の個性を最大限に引き出す焙煎技術と、<br>
                     バリスタの確かな技術で、<br>
                     あなただけの特別な一杯をお届けします。</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">産地</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">200°</span>
+                            <span class="stat-label">焙煎温度</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">365</span>
+                            <span class="stat-label">営業日数</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-image">
                     <img src="img/coffee-beans1.jpg" alt="コーヒー豆" class="fade-in">
@@ -59,25 +86,46 @@
     <!-- メニューセクション -->
     <section id="menu" class="section menu">
         <div class="container">
-            <h2 class="section-title">Menu</h2>
+            <h2 class="section-title" data-subtitle="Our Selection">Menu</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <img src="img/coffee-display.jpg" alt="コーヒーメニュー">
-                    <h3>Drip Coffee</h3>
-                    <p>¥500 - ¥800</p>
-                    <p class="menu-desc">日替わりのシングルオリジン</p>
+                    <div class="menu-image-wrapper">
+                        <img src="img/coffee-display.jpg" alt="コーヒーメニュー">
+                        <div class="menu-overlay">
+                            <span class="menu-tag">人気</span>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Drip Coffee</h3>
+                        <div class="menu-price">¥500 - ¥800</div>
+                        <p class="menu-desc">日替わりのシングルオリジン</p>
+                    </div>
                 </div>
                 <div class="menu-item">
-                    <img src="img/coffee-tasting.jpg" alt="スペシャルティコーヒー">
-                    <h3>Specialty</h3>
-                    <p>¥800 - ¥1,200</p>
-                    <p class="menu-desc">希少な限定コーヒー</p>
+                    <div class="menu-image-wrapper">
+                        <img src="img/coffee-tasting.jpg" alt="スペシャルティコーヒー">
+                        <div class="menu-overlay">
+                            <span class="menu-tag">限定</span>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Specialty</h3>
+                        <div class="menu-price">¥800 - ¥1,200</div>
+                        <p class="menu-desc">希少な限定コーヒー</p>
+                    </div>
                 </div>
                 <div class="menu-item">
-                    <img src="img/sweets.jpg" alt="スイーツ">
-                    <h3>Sweets</h3>
-                    <p>¥300 - ¥600</p>
-                    <p class="menu-desc">コーヒーに合う焼き菓子</p>
+                    <div class="menu-image-wrapper">
+                        <img src="img/sweets.jpg" alt="スイーツ">
+                        <div class="menu-overlay">
+                            <span class="menu-tag">おすすめ</span>
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <h3>Sweets</h3>
+                        <div class="menu-price">¥300 - ¥600</div>
+                        <p class="menu-desc">コーヒーに合う焼き菓子</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,21 +134,32 @@
     <!-- プロセスセクション -->
     <section id="process" class="section process">
         <div class="container">
-            <h2 class="section-title">こだわりの工程</h2>
+            <h2 class="section-title" data-subtitle="Our Process">こだわりの工程</h2>
             <div class="process-grid">
                 <div class="process-item">
-                    <img src="img/coffee-travel.jpg" alt="豆の選定">
-                    <h3>01. 豆の選定</h3>
+                    <div class="process-image-wrapper">
+                        <img src="img/coffee-travel.jpg" alt="豆の選定">
+                        <div class="process-number">01</div>
+                    </div>
+                    <h3>豆の選定</h3>
                     <p>世界中の農園から直接仕入れ</p>
+                    <div class="process-line"></div>
                 </div>
                 <div class="process-item">
-                    <img src="img/coffee-baisen2.jpg" alt="焙煎">
-                    <h3>02. 焙煎</h3>
+                    <div class="process-image-wrapper">
+                        <img src="img/coffee-baisen2.jpg" alt="焙煎">
+                        <div class="process-number">02</div>
+                    </div>
+                    <h3>焙煎</h3>
                     <p>豆の個性を引き出す最適な焙煎</p>
+                    <div class="process-line"></div>
                 </div>
                 <div class="process-item">
-                    <img src="img/cofee-drip.jpg" alt="抽出">
-                    <h3>03. 抽出</h3>
+                    <div class="process-image-wrapper">
+                        <img src="img/cofee-drip.jpg" alt="抽出">
+                        <div class="process-number">03</div>
+                    </div>
+                    <h3>抽出</h3>
                     <p>一杯一杯丁寧にハンドドリップ</p>
                 </div>
             </div>
@@ -115,7 +174,7 @@
                     <img src="img/shop.jpg" alt="店舗外観">
                 </div>
                 <div class="shop-info">
-                    <h2 class="section-title">Shop Info</h2>
+                    <h2 class="section-title" data-subtitle="Visit Us">Shop Info</h2>
                     <div class="info-item">
                         <h3>営業時間</h3>
                         <p>月〜金: 7:00 - 20:00<br>
@@ -139,7 +198,7 @@
     <!-- グッズセクション -->
     <section class="section goods">
         <div class="container">
-            <h2 class="section-title">Coffee Goods</h2>
+            <h2 class="section-title" data-subtitle="Take Home">Coffee Goods</h2>
             <div class="goods-content">
                 <img src="img/goods.jpg" alt="コーヒーグッズ">
                 <p>オリジナルのコーヒー豆やドリップバッグ、<br>
@@ -151,7 +210,16 @@
     <!-- フッター -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 CRAFT COFFEE. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">MAHOT COFFEE</div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#process">Process</a>
+                    <a href="#shop">Shop</a>
+                </div>
+                <p class="footer-copy">&copy; 2024 MAHOT COFFEE. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
