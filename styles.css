@@ -52,6 +52,35 @@ body {
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-svg {
+    height: 40px;
+    width: auto;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.logo-svg:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.animated-logo {
+    height: 100%;
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.navbar.scrolled .animated-logo {
+    filter: brightness(0) saturate(100%) invert(19%) sepia(8%) saturate(1052%) hue-rotate(169deg) brightness(97%) contrast(89%);
+}
+
 .logo-text {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
@@ -59,6 +88,7 @@ body {
     letter-spacing: 0.1em;
     color: var(--text-dark);
     transition: color 0.3s ease;
+    margin: 0;
 }
 
 .navbar:not(.scrolled) .logo-text {
