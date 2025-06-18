@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="../svg-animations.css"?>
 <svg width="486" height="306" viewBox="0 0 486 306" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Frame structure -->
   <path class="dripper-frame" d="M484 45V303.5"/>
@@ -24,5 +26,5 @@
   <path class="coffee-pool" d="M243 303L243 303L243 303L243 303Z"/>
   
   <!-- Dripper structure outline -->
-  <path class="dripper-structure" d="M243 303L136 166L350 166L243 303Z"/>
+  <path class="dripper-structure" d="M243 303L136 166L350 166L343 303Z"/>
 </svg>

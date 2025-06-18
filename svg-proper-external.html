@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAHOT COFFEE - 適切な外部SVG参照</title>
+    <link rel="stylesheet" href="svg-demo.css">
+</head>
+<body>
+    <div class="demo-container">
+        <h1>MAHOT COFFEE - 適切な外部SVG参照</h1>
+        <p>SVGファイル内でCSSを参照する適切な方法</p>
+        
+        <div class="svg-wrapper">
+            <!-- 方法1: xml-stylesheetを使用したSVG -->
+            <div class="method-section">
+                <h3>方法1: xml-stylesheet指定のSVG（推奨）</h3>
+                <object type="image/svg+xml" data="img/mahot-clean.svg" class="svg-display">
+                    SVGを読み込み中...
+                </object>
+                <p>✅ SVGファイル内で`<?xml-stylesheet?>`を使用してCSSを参照</p>
+            </div>
+            
+            <!-- 方法2: img要素での表示 -->
+            <div class="method-section">
+                <h3>方法2: img要素での表示</h3>
+                <img src="img/mahot-animated.svg" alt="MAHOT COFFEE" class="svg-display">
+                <p>⚠️ SVG内部のアニメーションは動作するが、外部からの制御は不可</p>
+            </div>
+            
+            <!-- 方法3: object要素 -->
+            <div class="method-section">
+                <h3>方法3: object要素</h3>
+                <object type="image/svg+xml" data="img/mahot-animated.svg" class="svg-display">
+                    SVGを読み込み中...
+                </object>
+                <p>✅ SVG内部のアニメーションが動作し、一部制御も可能</p>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>外部SVGファイル参照の最適解</h3>
+            <div class="solution-box">
+                <h4>🎯 推奨方法: xml-stylesheet + object要素</h4>
+                <ol>
+                    <li><strong>SVGファイル内にCSS参照を追加:</strong>
+                        <pre><code>&lt;?xml-stylesheet type="text/css" href="../svg-animations.css"?&gt;</code></pre>
+                    </li>
+                    <li><strong>HTMLでobject要素を使用:</strong>
+                        <pre><code>&lt;object type="image/svg+xml" data="img/mahot-clean.svg"&gt;&lt;/object&gt;</code></pre>
+                    </li>
+                    <li><strong>利点:</strong>
+                        <ul>
+                            <li>✅ 外部ファイルとして管理</li>
+                            <li>✅ アニメーションが正常動作</li>
+                            <li>✅ CSSファイルの再利用可能</li>
+                            <li>✅ キャッシュ効率が良い</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="technical-notes">
+                <h4>🔧 技術的詳細</h4>
+                <ul>
+                    <li><strong>xml-stylesheet:</strong> SVG内でCSSファイルを参照する標準的な方法</li>
+                    <li><strong>相対パス:</strong> SVGファイルからの相対パスでCSSを指定</li>
+                    <li><strong>ブラウザサポート:</strong> 全モダンブラウザで対応</li>
+                    <li><strong>セキュリティ:</strong> 同一オリジンポリシーの制約あり</li>
+                </ul>
+            </div>
+            
+            <div class="comparison-table">
+                <h4>📊 方法別比較表</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>要素</th>
+                            <th>ファイル分離</th>
+                            <th>アニメーション</th>
+                            <th>外部CSS</th>
+                            <th>推奨度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>&lt;img&gt;</code></td>
+                            <td>✅</td>
+                            <td>✅ (内部のみ)</td>
+                            <td>❌</td>
+                            <td>⭐⭐</td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;object&gt;</code></td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>⚠️ (制限あり)</td>
+                            <td>⭐⭐⭐</td>
+                        </tr>
+                        <tr>
+                            <td><code>xml-stylesheet + object</code></td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                        </tr>
+                        <tr>
+                            <td><code>inline SVG</code></td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>⭐⭐⭐</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .method-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .method-section h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .svg-display {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            display: block;
+            margin: 1rem auto;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+        
+        .solution-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #8B4513;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .technical-notes {
+            background: #f1f3f4;
+            border-left: 4px solid #8B4513;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .comparison-table {
+            margin: 1rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: white;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        
+        th {
+            background: #8B4513;
+            color: white;
+            font-weight: 500;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        code {
+            background: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #8B4513;
+        }
+        
+        pre {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 0.75rem;
+            overflow-x: auto;
+            margin: 0.5rem 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+        }
+    </style>
+</body>
+</html>

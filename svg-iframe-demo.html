@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAHOT COFFEE SVG - iframe版</title>
+    <link rel="stylesheet" href="svg-animations.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        .svg-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .animated-svg {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            filter: drop-shadow(0 5px 20px rgba(139, 69, 19, 0.2));
+        }
+        
+        .controls {
+            margin-top: 1rem;
+        }
+        
+        button {
+            background: #8B4513;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 0.8rem;
+            transition: background 0.3s ease;
+        }
+        
+        button:hover {
+            background: #d4a574;
+        }
+        
+        h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="svg-container">
+        <h3>MAHOT COFFEE - iframe内SVG</h3>
+        
+        <!-- 外部CSSで制御されるインラインSVG -->
+        <svg class="animated-svg" width="486" height="306" viewBox="0 0 486 306" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Frame structure -->
+          <path class="dripper-frame" d="M484 45V303.5"/>
+          <path class="dripper-frame" d="M2 45V303.5"/>
+          <path class="dripper-frame" d="M7 2L243 302.5L479 2"/>
+          <path class="dripper-frame" d="M66 166.5H420.5"/>
+          <path class="dripper-frame" d="M110 23L375 23"/>
+          
+          <!-- Frame glow effect -->
+          <path class="frame-glow" d="M110 23L375 23"/>
+          <path class="frame-glow" d="M66 166.5H420.5"/>
+          
+          <!-- Steam effects -->
+          <path class="steam-1" d="M220 40 Q222 30 225 20 Q228 15 230 10 Q232 5 235 0"/>
+          <path class="steam-2" d="M243 40 Q245 30 248 20 Q251 15 253 10 Q255 5 258 0"/>
+          <path class="steam-3" d="M266 40 Q268 30 271 20 Q274 15 276 10 Q278 5 281 0"/>
+          
+          <!-- Coffee drops with different sizes and timing -->
+          <circle class="coffee-drop-1" cx="242.5" cy="70.5" r="20.5"/>
+          <circle class="coffee-drop-2" cx="242.5" cy="133.5" r="9.5"/>
+          <circle class="coffee-drop-3" cx="242.5" cy="100" r="6"/>
+          
+          <!-- Coffee pool -->
+          <path class="coffee-pool" d="M243 303L243 303L243 303L243 303Z"/>
+          
+          <!-- Dripper structure outline -->
+          <path class="dripper-structure" d="M243 303L136 166L350 166L243 303Z"/>
+        </svg>
+        
+        <div class="controls">
+            <button onclick="applyFast()">高速</button>
+            <button onclick="applyColorful()">カラフル</button>
+            <button onclick="applySlow()">ゆっくり</button>
+            <button onclick="reset()">リセット</button>
+        </div>
+    </div>
+    
+    <script>
+        function applyFast() {
+            const svg = document.querySelector('.animated-svg');
+            svg.classList.add('coffee-drop-fast');
+        }
+        
+        function applyColorful() {
+            const svg = document.querySelector('.animated-svg');
+            svg.classList.add('coffee-colorful');
+        }
+        
+        function applySlow() {
+            const svg = document.querySelector('.animated-svg');
+            svg.classList.add('pool-slow');
+        }
+        
+        function reset() {
+            const svg = document.querySelector('.animated-svg');
+            svg.className = 'animated-svg';
+        }
+        
+        console.log('🖼️ iframe内でSVGアニメーションが動作中');
+    </script>
+</body>
+</html>

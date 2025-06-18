@@ -13,67 +13,33 @@
       }
       
       .coffee-drop-1 {
-        fill: #8B4513;
+        fill: #1F2937;
         animation: drop1Animation 3s ease-in-out infinite;
         opacity: 0;
         transform-origin: 242.5px 70.5px;
       }
       
       .coffee-drop-2 {
-        fill: #8B4513;
+        fill: #1F2937;
         animation: drop2Animation 3s ease-in-out infinite 1s;
         opacity: 0;
         transform-origin: 242.5px 133.5px;
       }
       
       .coffee-drop-3 {
-        fill: #8B4513;
+        fill: #1F2937;
         animation: drop3Animation 3s ease-in-out infinite 2s;
         opacity: 0;
         transform-origin: 242.5px 100px;
       }
       
       .coffee-pool {
-        fill: #8B4513;
+        fill: #1F2937;
         animation: poolFilling 6s ease-in-out infinite;
         opacity: 0.7;
       }
       
-      .steam-1 {
-        stroke: #d4a574;
-        stroke-width: 2;
-        fill: none;
-        opacity: 0;
-        animation: steamAnimation 4s ease-in-out infinite;
-        transform-origin: 225px 50px;
-      }
-      
-      .steam-2 {
-        stroke: #d4a574;
-        stroke-width: 2;
-        fill: none;
-        opacity: 0;
-        animation: steamAnimation 4s ease-in-out infinite 1.5s;
-        transform-origin: 243px 50px;
-      }
-      
-      .steam-3 {
-        stroke: #d4a574;
-        stroke-width: 2;
-        fill: none;
-        opacity: 0;
-        animation: steamAnimation 4s ease-in-out infinite 3s;
-        transform-origin: 261px 50px;
-      }
-      
-      .frame-glow {
-        stroke: #d4a574;
-        stroke-width: 4;
-        fill: none;
-        opacity: 0;
-        animation: frameGlow 8s ease-in-out infinite;
-      }
-      
+   
       .dripper-structure {
         stroke: currentColor;
         stroke-width: 3;
@@ -238,11 +204,6 @@
   <path class="dripper-frame" d="M7 2L243 302.5L479 2"/>
   <path class="dripper-frame" d="M66 166.5H420.5"/>
   <path class="dripper-frame" d="M110 23L375 23"/>
-  
-  <!-- Frame glow effect -->
-  <path class="frame-glow" d="M110 23L375 23"/>
-  <path class="frame-glow" d="M66 166.5H420.5"/>
-  
   
   <!-- Coffee drops with different sizes and timing -->
   <circle class="coffee-drop-1" cx="242.5" cy="70.5" r="20.5"/>
