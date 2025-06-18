@@ -1,8 +1,9 @@
 <svg width="486" height="306" viewBox="0 0 486 306" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <clipPath id="dripperClip">
-      <path d="M243 303L136 166L350 166L243 303Z"/>
-    </clipPath>
+    <mask id="dripperMask">
+      <rect width="100%" height="100%" fill="black"/>
+      <path d="M243 303L136 166L350 166L243 303Z" fill="white"/>
+    </mask>
     <style>
       .dripper-frame {
         stroke: currentColor;
@@ -35,9 +36,7 @@
       .coffee-pool {
         fill: #8B4513;
         animation: poolFilling 6s ease-in-out infinite;
-        transform-origin: 243px 303px;
         opacity: 0.7;
-        clip-path: url(#dripperClip);
       }
       
       .steam-1 {
@@ -161,31 +160,31 @@
       
       @keyframes poolFilling {
         0% { 
-          transform: scaleY(0);
+          d: path("M243 303L243 303L243 303L243 303Z");
           opacity: 0;
         }
         15% { 
-          transform: scaleY(0.1);
+          d: path("M243 303L230 290L256 290L243 303Z");
           opacity: 0.4;
         }
         30% { 
-          transform: scaleY(0.3);
+          d: path("M243 303L215 275L271 275L243 303Z");
           opacity: 0.6;
         }
         50% { 
-          transform: scaleY(0.6);
+          d: path("M243 303L195 250L291 250L243 303Z");
           opacity: 0.8;
         }
         70% { 
-          transform: scaleY(0.9);
+          d: path("M243 303L175 225L311 225L243 303Z");
           opacity: 0.9;
         }
         85% { 
-          transform: scaleY(1);
+          d: path("M243 303L155 200L331 200L243 303Z");
           opacity: 1;
         }
         100% { 
-          transform: scaleY(0.8);
+          d: path("M243 303L165 210L321 210L243 303Z");
           opacity: 0.8;
         }
       }
@@ -255,7 +254,7 @@
   <circle class="coffee-drop-3" cx="242.5" cy="100" r="6"/>
   
   <!-- Coffee pool -->
-  <rect class="coffee-pool" x="136" y="166" width="214" height="137"/>
+  <path class="coffee-pool" d="M243 303L243 303L243 303L243 303Z"/>
   
   <!-- Dripper structure outline -->
   <path class="dripper-structure" d="M243 303L136 166L350 166L243 303Z"/>
