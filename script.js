@@ -125,9 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // ヒーローSVGのパララックス効果
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const heroSvg = document.querySelector('.hero-animated-svg');
-    if (heroSvg && scrolled < window.innerHeight) {
-        heroSvg.style.transform = `translateY(${scrolled * 0.3}px) rotate(${scrolled * 0.02}deg)`;
+    const heroSvgContainer = document.querySelector('.hero-svg-container');
+    if (heroSvgContainer && scrolled < window.innerHeight) {
+        heroSvgContainer.style.transform = `translateY(${scrolled * 0.3}px) rotate(${scrolled * 0.02}deg)`;
     }
 });
 

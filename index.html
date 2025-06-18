@@ -32,7 +32,263 @@
     <section class="hero">
         <div class="hero-background">
             <div class="hero-svg-container">
-                <img src="img/mahot-animated.svg" alt="MAHOT COFFEE ドリッパー" class="hero-animated-svg">
+                <svg class="hero-animated-svg" width="486" height="306" viewBox="0 0 486 306" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <style>
+                      .dripper-frame {
+                        stroke: currentColor;
+                        stroke-width: 4;
+                        fill: none;
+                        opacity: 0.8;
+                      }
+                      
+                      .coffee-drop-1 {
+                        fill: #8B4513;
+                        animation: drop1Animation 3s ease-in-out infinite;
+                        opacity: 0;
+                        transform-origin: 242.5px 70.5px;
+                      }
+                      
+                      .coffee-drop-2 {
+                        fill: #8B4513;
+                        animation: drop2Animation 3s ease-in-out infinite 1s;
+                        opacity: 0;
+                        transform-origin: 242.5px 133.5px;
+                      }
+                      
+                      .coffee-drop-3 {
+                        fill: #8B4513;
+                        animation: drop3Animation 3s ease-in-out infinite 2s;
+                        opacity: 0;
+                        transform-origin: 242.5px 100px;
+                      }
+                      
+                      .coffee-pool {
+                        fill: #8B4513;
+                        animation: poolFilling 6s ease-in-out infinite;
+                        opacity: 0.7;
+                      }
+                      
+                      .steam-1 {
+                        stroke: #d4a574;
+                        stroke-width: 2;
+                        fill: none;
+                        opacity: 0;
+                        animation: steamAnimation 4s ease-in-out infinite;
+                        transform-origin: 225px 50px;
+                      }
+                      
+                      .steam-2 {
+                        stroke: #d4a574;
+                        stroke-width: 2;
+                        fill: none;
+                        opacity: 0;
+                        animation: steamAnimation 4s ease-in-out infinite 1.5s;
+                        transform-origin: 243px 50px;
+                      }
+                      
+                      .steam-3 {
+                        stroke: #d4a574;
+                        stroke-width: 2;
+                        fill: none;
+                        opacity: 0;
+                        animation: steamAnimation 4s ease-in-out infinite 3s;
+                        transform-origin: 261px 50px;
+                      }
+                      
+                      .frame-glow {
+                        stroke: #d4a574;
+                        stroke-width: 4;
+                        fill: none;
+                        opacity: 0;
+                        animation: frameGlow 8s ease-in-out infinite;
+                      }
+                      
+                      .dripper-structure {
+                        stroke: currentColor;
+                        stroke-width: 3;
+                        fill: none;
+                        animation: dripperPulse 4s ease-in-out infinite;
+                      }
+                      
+                      @keyframes drop1Animation {
+                        0% { 
+                          opacity: 0;
+                          transform: scale(0.3) translateY(-10px);
+                        }
+                        15% { 
+                          opacity: 1;
+                          transform: scale(1) translateY(0px);
+                        }
+                        35% { 
+                          opacity: 1;
+                          transform: scale(0.9) translateY(40px);
+                        }
+                        50% { 
+                          opacity: 0.8;
+                          transform: scale(0.7) translateY(70px);
+                        }
+                        70% { 
+                          opacity: 0.3;
+                          transform: scale(0.4) translateY(90px);
+                        }
+                        100% { 
+                          opacity: 0;
+                          transform: scale(0.1) translateY(100px);
+                        }
+                      }
+                      
+                      @keyframes drop2Animation {
+                        0% { 
+                          opacity: 0;
+                          transform: scale(0.2) translateY(-5px);
+                        }
+                        20% { 
+                          opacity: 1;
+                          transform: scale(0.6) translateY(0px);
+                        }
+                        40% { 
+                          opacity: 1;
+                          transform: scale(0.5) translateY(20px);
+                        }
+                        60% { 
+                          opacity: 0.7;
+                          transform: scale(0.4) translateY(35px);
+                        }
+                        80% { 
+                          opacity: 0.3;
+                          transform: scale(0.2) translateY(45px);
+                        }
+                        100% { 
+                          opacity: 0;
+                          transform: scale(0.1) translateY(50px);
+                        }
+                      }
+                      
+                      @keyframes drop3Animation {
+                        0% { 
+                          opacity: 0;
+                          transform: scale(0.1) translateY(-3px);
+                        }
+                        25% { 
+                          opacity: 0.8;
+                          transform: scale(0.4) translateY(0px);
+                        }
+                        50% { 
+                          opacity: 0.9;
+                          transform: scale(0.35) translateY(25px);
+                        }
+                        75% { 
+                          opacity: 0.5;
+                          transform: scale(0.2) translateY(40px);
+                        }
+                        100% { 
+                          opacity: 0;
+                          transform: scale(0.1) translateY(50px);
+                        }
+                      }
+                      
+                      @keyframes poolFilling {
+                        0% { 
+                          d: path("M243 303L243 303L243 303L243 303Z");
+                          opacity: 0;
+                        }
+                        15% { 
+                          d: path("M243 303L230 290L256 290L243 303Z");
+                          opacity: 0.4;
+                        }
+                        30% { 
+                          d: path("M243 303L215 275L271 275L243 303Z");
+                          opacity: 0.6;
+                        }
+                        50% { 
+                          d: path("M243 303L195 250L291 250L243 303Z");
+                          opacity: 0.8;
+                        }
+                        70% { 
+                          d: path("M243 303L175 225L311 225L243 303Z");
+                          opacity: 0.9;
+                        }
+                        85% { 
+                          d: path("M243 303L155 200L331 200L243 303Z");
+                          opacity: 1;
+                        }
+                        100% { 
+                          d: path("M243 303L165 210L321 210L243 303Z");
+                          opacity: 0.8;
+                        }
+                      }
+                      
+                      @keyframes steamAnimation {
+                        0% { 
+                          opacity: 0;
+                          transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+                        }
+                        25% { 
+                          opacity: 0.6;
+                          transform: translateY(-15px) translateX(3px) rotate(3deg) scale(1.1);
+                        }
+                        50% { 
+                          opacity: 0.8;
+                          transform: translateY(-30px) translateX(-2px) rotate(-2deg) scale(1.2);
+                        }
+                        75% { 
+                          opacity: 0.4;
+                          transform: translateY(-45px) translateX(4px) rotate(4deg) scale(1.3);
+                        }
+                        100% { 
+                          opacity: 0;
+                          transform: translateY(-60px) translateX(-1px) rotate(-1deg) scale(1.4);
+                        }
+                      }
+                      
+                      @keyframes frameGlow {
+                        0%, 100% { 
+                          opacity: 0;
+                        }
+                        50% { 
+                          opacity: 0.2;
+                        }
+                      }
+                      
+                      @keyframes dripperPulse {
+                        0%, 100% { 
+                          transform: scale(1);
+                        }
+                        50% { 
+                          transform: scale(1.02);
+                        }
+                      }
+                    </style>
+                  </defs>
+                  
+                  <!-- Frame structure -->
+                  <path class="dripper-frame" d="M484 45V303.5"/>
+                  <path class="dripper-frame" d="M2 45V303.5"/>
+                  <path class="dripper-frame" d="M7 2L243 302.5L479 2"/>
+                  <path class="dripper-frame" d="M66 166.5H420.5"/>
+                  <path class="dripper-frame" d="M110 23L375 23"/>
+                  
+                  <!-- Frame glow effect -->
+                  <path class="frame-glow" d="M110 23L375 23"/>
+                  <path class="frame-glow" d="M66 166.5H420.5"/>
+                  
+                  <!-- Steam effects -->
+                  <path class="steam-1" d="M220 40 Q222 30 225 20 Q228 15 230 10 Q232 5 235 0"/>
+                  <path class="steam-2" d="M243 40 Q245 30 248 20 Q251 15 253 10 Q255 5 258 0"/>
+                  <path class="steam-3" d="M266 40 Q268 30 271 20 Q274 15 276 10 Q278 5 281 0"/>
+                  
+                  <!-- Coffee drops with different sizes and timing -->
+                  <circle class="coffee-drop-1" cx="242.5" cy="70.5" r="20.5"/>
+                  <circle class="coffee-drop-2" cx="242.5" cy="133.5" r="9.5"/>
+                  <circle class="coffee-drop-3" cx="242.5" cy="100" r="6"/>
+                  
+                  <!-- Coffee pool -->
+                  <path class="coffee-pool" d="M243 303L243 303L243 303L243 303Z"/>
+                  
+                  <!-- Dripper structure outline -->
+                  <path class="dripper-structure" d="M243 303L136 166L350 166L243 303Z"/>
+                </svg>
             </div>
             <div class="hero-overlay"></div>
         </div>
