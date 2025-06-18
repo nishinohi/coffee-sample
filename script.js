@@ -122,12 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
     processItems.forEach(item => observer.observe(item));
 });
 
-// ヒーロー画像のパララックス効果
+// ヒーローSVGのパララックス効果
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const heroImage = document.querySelector('.hero-image img');
-    if (heroImage && scrolled < window.innerHeight) {
-        heroImage.style.transform = `scale(1.1) translateY(${scrolled * 0.4}px)`;
+    const heroSvg = document.querySelector('.hero-animated-svg');
+    if (heroSvg && scrolled < window.innerHeight) {
+        heroSvg.style.transform = `translateY(${scrolled * 0.3}px) rotate(${scrolled * 0.02}deg)`;
     }
 });
 
